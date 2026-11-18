@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUSH — Next-Generation Fast Food Experience | Andijan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-follower" id="cursorFollower"></div>
+
+    <!-- Navigation Bar -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">CRUSH<span>.</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link" data-i18n="nav_home">Home</a>
+                <a href="#menu" class="nav-link" data-i18n="nav_menu">Menu</a>
+                <a href="#specials" class="nav-link" data-i18n="nav_promotions">Promotions</a>
+                <a href="#story" class="nav-link" data-i18n="nav_about">About</a>
+                <a href="#delivery" class="nav-link" data-i18n="nav_delivery">Delivery</a>
+                <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="uz">UZ</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="cart-trigger" id="cartTrigger" aria-label="Shopping Cart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu Toggle">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-content">
+            <a href="#hero" class="mobile-link" data-i18n="nav_home">Home</a>
+            <a href="#menu" class="mobile-link" data-i18n="nav_menu">Menu</a>
+            <a href="#specials" class="mobile-link" data-i18n="nav_promotions">Promotions</a>
+            <a href="#story" class="mobile-link" data-i18n="nav_about">About</a>
+            <a href="#delivery" class="mobile-link" data-i18n="nav_delivery">Delivery</a>
+            <a href="#contact" class="mobile-link" data-i18n="nav_contact">Contact</a>
+            <div class="mobile-lang">
+                <button class="lang-btn active" data-lang="uz">UZ</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge animate-fade">
+                    <span class="pulse-dot"></span>
+                    <span data-i18n="hero_tagline">ANDIJAN'S NEW CULINARY REVOLUTION</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="line-1" data-i18n="hero_title_1">NOT JUST FOOD.</span>
+                    <span class="line-2 gradient-text" data-i18n="hero_title_2">IT'S AN EXPERIENCE.</span>
+                </h1>
+                <p class="hero-desc" data-i18n="hero_desc">
+                    Immerse your senses in rebellious flavors, ultra-juicy 3D crafted burgers, and street-culture attitude right in the heart of Andijan.
+                </p>
+                <div class="hero-cta">
+                    <a href="#menu" class="btn btn-primary magnetic" data-i18n="btn_order">
+                        <span>ORDER NOW</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#story" class="btn btn-secondary magnetic" data-i18n="btn_discover">
+                        <span>DISCOVER OUR MENU</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-burger-container">
+                    <div class="glow-orb"></div>
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80" alt="Giant Floating Signature Burger" class="floating-burger" id="floatingBurger" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=1000&q=80'">
+                    <div class="floating-sticker badge-1">🔥 100% Halal</div>
+                    <div class="floating-sticker badge-2">⚡️ Fast 30 min</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Banner -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>CRUSH BURGERS • ANDIJAN • ULTRA JUICY • CRISPY FRIES • FRESHLY BAKED BRIOCHE • CRAVINGS DON'T WAIT • </span>
+            <span>CRUSH BURGERS • ANDIJAN • ULTRA JUICY • CRISPY FRIES • FRESHLY BAKED BRIOCHE • CRAVINGS DON'T WAIT • </span>
+        </div>
+    </div>
+
+    <!-- Interactive Food Experience / Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="menu_tag">OUR CREATIONS</span>
+                <h2 class="section-title" data-i18n="menu_title">THE UNCOMPROMISING MENU</h2>
+            </div>
+
+            <!-- Interactive Category Selector -->
+            <div class="category-filters" id="categoryFilters">
+                <button class="filter-btn active" data-filter="all" data-i18n="cat_all">All Creations</button>
+                <button class="filter-btn" data-filter="burgers" data-i18n="cat_burgers">Burgers</button>
+                <button class="filter-btn" data-filter="chicken" data-i18n="cat_chicken">Chicken & Bites</button>
+                <button class="filter-btn" data-filter="pizzas" data-i18n="cat_pizzas">Pizzas</button>
+                <button class="filter-btn" data-filter="sides" data-i18n="cat_sides">Sides & Wraps</button>
+            </div>
+
+            <!-- Product Grid (15 items) -->
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <!-- Amazing Food Carousels Section -->
+    <section class="carousels-section" id="specials">
+        <div class="container">
+            <!-- A. Bestsellers Carousel -->
+            <div class="carousel-block bestseller-block">
+                <div class="carousel-header">
+                    <div>
+                        <span class="section-tag" data-i18n="bs_tag">CROWD FAVORITES</span>
+                        <h3 class="carousel-title" data-i18n="bs_title">BESTSELLERS</h3>
+                    </div>
+                    <div class="carousel-nav-btns">
+                        <button class="c-prev" aria-label="Previous"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+                        <button class="c-next" aria-label="Next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                    </div>
+                </div>
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track" id="bestsellerTrack"></div>
+                </div>
+            </div>
+
+            <!-- B. Hot Deals Carousel -->
+            <div class="carousel-block hotdeals-block">
+                <div class="carousel-header">
+                    <div>
+                        <span class="section-tag fiery" data-i18n="hd_tag">LIMITED TIME OFFERS</span>
+                        <h3 class="carousel-title" data-i18n="hd_title">HOT DEALS & DISCOUNTS</h3>
+                    </div>
+                    <div class="carousel-nav-btns">
+                        <button class="hd-prev" aria-label="Previous"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+                        <button class="hd-next" aria-label="Next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                    </div>
+                </div>
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track" id="hotdealsTrack"></div>
+                </div>
+            </div>
+
+            <!-- C. Combo Experiences Carousel -->
+            <div class="carousel-block combo-block">
+                <div class="carousel-header">
+                    <div>
+                        <span class="section-tag cream" data-i18n="cb_tag">MAXIMUM VALUE SETS</span>
+                        <h3 class="carousel-title" data-i18n="cb_title">COMBO EXPERIENCES</h3>
+                    </div>
+                    <div class="carousel-nav-btns">
+                        <button class="cb-prev" aria-label="Previous"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+                        <button class="cb-next" aria-label="Next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                    </div>
+                </div>
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track" id="combosTrack"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Scroll Storytelling Section -->
+    <section class="storytelling-section" id="storytelling">
+        <div class="story-sticky-container">
+            <div class="story-content-box">
+                <span class="section-tag" data-i18n="story_brand_tag">THE MANIFESTO</span>
+                <h2 class="story-giant-text" data-i18n="story_giant_text">
+                    GOOD FOOD.<br>
+                    GOOD MOOD.<br>
+                    GREAT MOMENTS.
+                </h2>
+                <p class="story-sub" data-i18n="story_sub">
+                    We refuse to compromise on quality. Every single morning, our bakers proof brioche dough and our master grillers prepare 100% prime marbled beef. Taste the difference of raw passion.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why People Love Us Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag" data-i18n="why_tag">THE CRUSH DIFFERENCE</span>
+                <h2 class="section-title" data-i18n="why_title">WHY PEOPLE LOVE US</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3 data-i18n="feat_1_title">Fresh Ingredients</h3>
+                    <p data-i18n="feat_1_desc">Locally sourced, farm-fresh vegetables and prime cuts delivered daily.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔥</div>
+                    <h3 data-i18n="feat_2_title">Delicious Recipes</h3>
+                    <p data-i18n="feat_2_desc">Crafted by international culinary experts for an explosion of flavor.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 data-i18n="feat_3_title">Fast Delivery</h3>
+                    <p data-i18n="feat_3_desc">Blazing fast dispatch across Andijan so your food arrives piping hot.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3 data-i18n="feat_4_title">Affordable Prices</h3>
+                    <p data-i18n="feat_4_desc">World-class gourmet standards paired with fair, accessible pricing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3 data-i18n="feat_5_title">Friendly Service</h3>
+                    <p data-i18n="feat_5_desc">Energetic, welcoming staff ready to make your visit unforgettable.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3 data-i18n="feat_6_title">Quality Guarantee</h3>
+                    <p data-i18n="feat_6_desc">Rigorous hygiene and culinary standards in every single bite.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Experience Section -->
+    <section class="delivery-section" id="delivery">
+        <div class="container">
+            <div class="delivery-wrapper">
+                <div class="delivery-info">
+                    <span class="section-tag fiery" data-i18n="del_tag">EXPRESS LOGISTICS</span>
+                    <h2 class="delivery-title" data-i18n="del_title">CRAVINGS DON'T WAIT.</h2>
+                    <p class="delivery-desc" data-i18n="del_desc">
+                        Enjoy lightning-fast delivery across all districts of Andijan city. Delivered hot, fresh, and securely packaged in our signature thermal boxes.
+                    </p>
+                    <div class="delivery-meta-grid">
+                        <div class="meta-box">
+                            <span class="meta-label" data-i18n="del_time_label">Average Time</span>
+                            <span class="meta-val">25 - 35 min</span>
+                        </div>
+                        <div class="meta-box">
+                            <span class="meta-label" data-i18n="del_fee_label">Delivery Fee</span>
+                            <span class="meta-val">10,000 UZS</span>
+                        </div>
+                        <div class="meta-box">
+                            <span class="meta-label" data-i18n="del_area_label">Service Area</span>
+                            <span class="meta-val" data-i18n="del_area_val">Andijan City</span>
+                        </div>
+                    </div>
+                    <a href="#menu" class="btn btn-primary magnetic" data-i18n="del_btn">
+                        <span>ORDER FOR DELIVERY</span>
+                    </a>
+                </div>
+                <div class="delivery-visual-box">
+                    <img src="https://images.unsplash.com/photo-1526239367243-e3c3b018b323?auto=format&fit=crop&w=900&q=80" alt="Fast food delivery scooter" class="delivery-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story Section -->
+    <section class="brand-story-section" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-img-col">
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="Chef crafting gourmet burger" class="story-main-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div class="story-text-col">
+                    <span class="section-tag" data-i18n="story_sec_tag">OUR ROOTS</span>
+                    <h2 class="section-title" data-i18n="story_sec_title">REDEFINING TASTE IN ANDIJAN</h2>
+                    <p class="story-body" data-i18n="story_body_1">
+                        Founded with a rebellious vision to shatter boring fast-food conventions, CRUSH brought world-class gourmet street culture directly to Abdurauf Fitrat Street. We source premium local produce and combine secret house sauces to create flavor profiles that linger in your memory.
+                    </p>
+                    <div class="philosophy-pills">
+                        <div class="pill" data-i18n="pill_1">100% Halal Certified</div>
+                        <div class="pill" data-i18n="pill_2">Artisan Brioche Buns</div>
+                        <div class="pill" data-i18n="pill_3">Secret Signature Sauces</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Experience / Reviews Carousel -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag" data-i18n="rev_tag">WALL OF LOVE</span>
+                <h2 class="section-title" data-i18n="rev_title">WHAT OUR GUESTS SAY</h2>
+            </div>
+            <div class="reviews-slider-wrapper">
+                <div class="reviews-track" id="reviewsTrack"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-col">
+                    <span class="section-tag fiery" data-i18n="contact_tag">GET IN TOUCH</span>
+                    <h2 class="contact-title" data-i18n="contact_title">VISIT OUR FLAGSHIP</h2>
+                    
+                    <div class="contact-card-item">
+                        <div class="c-icon">📍</div>
+                        <div>
+                            <h4 data-i18n="c_addr_label">Address</h4>
+                            <p class="address-text" data-uz="Andijon shahri, Abdurauf Fitrat ko'chasi, 236-uy, mo'ljal: Dunyo bozori ro'parasi." data-ru="г. Андиджан, ул. Абдурауфа Фитрата, 236, ориентир: напротив базара Дунё." data-en="Andijan city, Abdurauf Fitrat Street, 236. Opposite Dunyo Bazaar.">
+                                Andijon shahri, Abdurauf Fitrat ko'chasi, 236-uy, mo'ljal: Dunyo bozori ro'parasi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card-item">
+                        <div class="c-icon">📞</div>
+                        <div>
+                            <h4 data-i18n="c_phone_label">Direct Line</h4>
+                            <a href="tel:+998950379557" class="phone-link">+998 95 037 95 57</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card-item">
+                        <div class="c-icon">⏰</div>
+                        <div>
+                            <h4 data-i18n="c_hours_label">Working Hours</h4>
+                            <p>Mon - Sun: 10:00 AM — 03:00 AM (Open Late)</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links-row">
+                        <a href="https://t.me" target="_blank" class="social-pill" data-i18n="soc_tg">Telegram Channel</a>
+                        <a href="https://instagram.com" target="_blank" class="social-pill" data-i18n="soc_ig">Instagram Profile</a>
+                    </div>
+                </div>
+
+                <div class="map-col">
+                    <div class="map-container">
+                        <iframe 
+                            title="Andijan Flagship Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.225!2d72.344!3d40.782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ2JzQ5Ii4yTiA3MsKwMjAnMzguNCJF!5e0!3m2!1sen!2suz!4v1600000000000!5m2!1sen!2suz" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">CRUSH<span>.</span></a>
+                <p data-i18n="footer_desc">The next-generation fast food experience in Andijan. Bold flavors, zero compromises.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer_nav">Navigation</h4>
+                <a href="#hero" data-i18n="nav_home">Home</a>
+                <a href="#menu" data-i18n="nav_menu">Menu</a>
+                <a href="#specials" data-i18n="nav_promotions">Promotions</a>
+                <a href="#contact" data-i18n="nav_contact">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <h4 data-i18n="footer_hq">Andijan Flagship</h4>
+                <p>Abdurauf Fitrat Street, 236</p>
+                <p>Opposite Dunyo Bazaar</p>
+                <p>Phone: +998 95 037 95 57</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CRUSH Fast Food Chain. All rights reserved. Designed for Awwwards.</p>
+        </div>
+    </footer>
+
+    <!-- Functional Shopping Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h3 data-i18n="cart_title">Your Order</h3>
+            <button class="cart-close-btn" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cartItemsContainer"></div>
+        <div class="cart-drawer-footer" id="cartFooter">
+            <div class="cart-total-row">
+                <span data-i18n="cart_total">Total:</span>
+                <span id="cartTotalPrice">0 UZS</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkoutBtn" data-i18n="cart_checkout">PROCEED TO CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- UPGRADED MULTI-STEP CHECKOUT MODAL SYSTEM -->
+    <div class="checkout-modal-overlay" id="checkoutModalOverlay">
+        <div class="checkout-modal" id="checkoutModal">
+            
+            <!-- Modal Header with Progress Indicator -->
+            <div class="checkout-modal-header">
+                <div class="checkout-header-titles">
+                    <span class="checkout-step-indicator" id="checkoutStepIndicator">Step 1 of 4</span>
+                    <h3 id="checkoutModalTitle" data-i18n="chk_modal_title">Complete Your Order</h3>
+                </div>
+                <button class="checkout-close-btn" id="checkoutClose">&times;</button>
+            </div>
+
+            <!-- Modal Body Content -->
+            <div class="checkout-modal-body" id="checkoutModalBody">
+                
+                <!-- STEP 1: ORDER TYPE SELECTION -->
+                <div class="checkout-step-pane active" id="stepOrderType">
+                    <h4 class="step-question" data-i18n="chk_q_how">HOW WOULD YOU LIKE YOUR ORDER?</h4>
+                    <div class="order-type-grid">
+                        <div class="order-type-card" data-type="delivery" id="cardDelivery">
+                            <div class="ot-icon">🛵</div>
+                            <h5 data-i18n="ot_delivery_title">Delivery</h5>
+                            <p data-i18n="ot_delivery_desc">We will deliver your hot order directly to your door in Andijan.</p>
+                            <span class="ot-tag">30 - 45 min</span>
+                        </div>
+                        <div class="order-type-card" data-type="pickup" id="cardPickup">
+                            <div class="ot-icon">🏛️</div>
+                            <h5 data-i18n="ot_pickup_title">Eat at Restaurant</h5>
+                            <p data-i18n="ot_pickup_desc">Enjoy freshly prepared food right at our flagship restaurant.</p>
+                            <span class="ot-tag">15 - 20 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: DETAILS FORM -->
+                <div class="checkout-step-pane" id="stepForm">
+                    <!-- Delivery Form View -->
+                    <div class="form-view active" id="deliveryFormView">
+                        <h4 class="step-question" data-i18n="chk_del_details">Delivery Information</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label data-i18n="lbl_name">Full Name *</label>
+                                <input type="text" id="delName" placeholder="e.g. Sardor Bekchanov" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="lbl_phone">Phone Number *</label>
+                                <input type="tel" id="delPhone" value="+998 " required>
+                            </div>
+                            <div class="form-group full-span">
+                                <label data-i18n="lbl_street">Street Address *</label>
+                                <input type="text" id="delStreet" placeholder="e.g. Babur Avenue" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="lbl_house">House / Building *</label>
+                                <input type="text" id="delHouse" placeholder="e.g. 45" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="lbl_apt">Apartment (Optional)</label>
+                                <input type="text" id="delApt" placeholder="e.g. 12">
+                            </div>
+                            <div class="form-group full-span">
+                                <label data-i18n="lbl_landmark">Landmark</label>
+                                <input type="text" id="delLandmark" placeholder="e.g. Near Central Park">
+                            </div>
+                            <div class="form-group full-span">
+                                <label data-i18n="lbl_instructions">Delivery Instructions</label>
+                                <input type="text" id="delInstructions" placeholder="e.g. Ring the doorbell, leave at door">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pickup Form View -->
+                    <div class="form-view" id="pickupFormView">
+                        <h4 class="step-question" data-i18n="chk_pickup_details">Restaurant / Dine-In Information</h4>
+                        <div class="location-banner">
+                            <span class="loc-icon">📍</span>
+                            <div>
+                                <strong data-i18n="loc_title">Andijan Flagship Restaurant</strong>
+                                <p>Andijon shahri, Abdurauf Fitrat ko'chasi, 236-uy (Dunyo bozori ro'parasi)</p>
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label data-i18n="lbl_name">Full Name *</label>
+                                <input type="text" id="pickName" placeholder="e.g. Malika Karimova" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="lbl_phone">Phone Number *</label>
+                                <input type="tel" id="pickPhone" value="+998 " required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="lbl_guests">Number of Guests (Optional)</label>
+                                <input type="number" id="pickGuests" min="1" max="20" placeholder="2">
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="lbl_time">Expected Time *</label>
+                                <input type="text" id="pickTime" value="As soon as possible (15-20 mins)" required>
+                            </div>
+                            <div class="form-group full-span">
+                                <label data-i18n="lbl_comments">Additional Comments</label>
+                                <input type="text" id="pickComments" placeholder="e.g. Prefer window table">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: PREPARATION TIME & ORDER SUMMARY -->
+                <div class="checkout-step-pane" id="stepSummary">
+                    <div class="time-estimate-banner" id="timeEstimateBanner">
+                        <div class="clock-icon">⏰</div>
+                        <div>
+                            <h5 id="timeEstimateTitle">Estimated Time: 30 - 45 minutes</h5>
+                            <p id="timeEstimateDesc" data-i18n="time_est_desc">Your order will be prepared fresh and delivered securely. Times may vary based on workload.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="step-question" data-i18n="chk_order_summary">Order Review & Summary</h4>
+                    <div class="summary-box">
+                        <div class="summary-items-list" id="summaryItemsList"></div>
+                        <div class="summary-details-grid">
+                            <div class="sum-row">
+                                <span data-i18n="sum_type">Order Type:</span>
+                                <strong id="sumOrderTypeVal">Delivery</strong>
+                            </div>
+                            <div class="sum-row">
+                                <span data-i18n="sum_contact">Contact:</span>
+                                <span id="sumContactVal">—</span>
+                            </div>
+                            <div class="sum-row" id="sumAddressRow">
+                                <span data-i18n="sum_location">Location / Address:</span>
+                                <span id="sumAddressVal">—</span>
+                            </div>
+                            <div class="sum-row">
+                                <span data-i18n="sum_subtotal">Subtotal:</span>
+                                <span id="sumSubtotalVal">0 UZS</span>
+                            </div>
+                            <div class="sum-row" id="sumDeliveryFeeRow">
+                                <span data-i18n="sum_delivery_fee">Delivery Fee:</span>
+                                <span id="sumDeliveryFeeVal">10,000 UZS</span>
+                            </div>
+                            <div class="sum-row total-row">
+                                <span data-i18n="sum_final_total">Final Total:</span>
+                                <span id="sumFinalTotalVal">0 UZS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4: SUCCESS CONFIRMATION -->
+                <div class="checkout-step-pane" id="stepSuccess">
+                    <div class="success-container">
+                        <div class="success-checkmark">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        </div>
+                        <h3 class="success-title" data-i18n="succ_title">ORDER CONFIRMED!</h3>
+                        <p class="success-subtitle" data-i18n="succ_subtitle">Thank you for ordering with CRUSH. Your culinary experience is being prepared.</p>
+                        
+                        <div class="success-receipt">
+                            <div class="rcpt-row">
+                                <span data-i18n="rcpt_ord_no">Order Number:</span>
+                                <strong id="rcptOrderNo">#CRUSH-8492</strong>
+                            </div>
+                            <div class="rcpt-row">
+                                <span data-i18n="rcpt_type">Type:</span>
+                                <span id="rcptType">Delivery</span>
+                            </div>
+                            <div class="rcpt-row">
+                                <span data-i18n="rcpt_name">Name:</span>
+                                <span id="rcptName">—</span>
+                            </div>
+                            <div class="rcpt-row">
+                                <span data-i18n="rcpt_eta">Estimated Arrival:</span>
+                                <span id="rcptEta" style="color: var(--electric-orange); font-weight: 700;">30 - 45 minutes</span>
+                            </div>
+                        </div>
+
+                        <div class="demo-notice-box">
+                            <p data-i18n="demo_notice">This is a demo frontend simulation. To instantly send your order or confirm with our manager in Andijan:</p>
+                            <div class="demo-action-btns">
+                                <a href="tel:+998950379557" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.85rem;">📞 Call +998 95 037 95 57</a>
+                                <a href="https://t.me" target="_blank" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;" data-i18n="btn_send_tg">💬 Send via Telegram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer Navigation Buttons -->
+            <div class="checkout-modal-footer" id="checkoutModalFooter">
+                <button class="btn btn-secondary" id="chkBackBtn" style="display: none;" data-i18n="btn_back">Back</button>
+                <button class="btn btn-primary" id="chkNextBtn" data-i18n="btn_continue">Continue to Details</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Item added to cart!</div>
+
+    <script src="index.js"></script>
+</body>
+</html>
